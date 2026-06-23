@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4SLASeditor — демо</title>
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+    <div class="demo-container">
+        <h1>4SLASeditor</h1>
+        <p class="demo-subtitle">WYSIWYG-редактор на чистом JavaScript. 0 зависимостей.</p>
+
+        <div contenteditable="true" id="editor">
+            <h2>Добро пожаловать!</h2>
+            <p>Это демонстрация 4SLASeditor. Попробуйте вставить <b>жирный</b>, <i>курсив</i> или вставьте <a href="#">ссылку</a>.</p>
+            <p>Создайте список:</p>
+            <ul>
+                <li>Первый пункт</li>
+                <li>Второй пункт</li>
+                <li>Третий пункт</li>
+            </ul>
+            <p>Или вставьте код: <code>console.log('Hello, 4SLASeditor!');</code></p>
+        </div>
+        <textarea id="content" name="content" hidden></textarea>
+
+        <div class="demo-actions">
+            <button onclick="showHtml()">Посмотреть HTML</button>
+            <button onclick="clearEditor()">Очистить</button>
+        </div>
+        <div id="html-output" class="demo-html-output"></div>
+    </div>
+
+    <script src="../4SLASeditor.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            new SimpleEditor('editor', 'content');
+        });
+
+        function showHtml() {
+            var textarea = document.getElementById('content');
+            var output = document.getElementById('html-output');
+            var html = textarea.value || document.getElementById('editor').innerHTML;
+            output.textContent = html;
+            output.style.display = 'block';
+        }
+
+        function clearEditor() {
+            document.getElementById('editor').innerHTML = '';
+            var output = document.getElementById('html-output');
+            output.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
