@@ -1,5 +1,5 @@
 /**
- * 4Tim-редактор v0.3
+ * 4SLASeditor v0.3
  * WYSIWYG-редактор на contenteditable
  * Стили вынесены в admin.css
  * Автор: ruslanabuzyaroff
@@ -152,7 +152,7 @@ class SimpleEditor {
             <button type="button" data-cmd="undo" title="Отменить (Ctrl+Z)">${icon('<path d="M4 8h8a4 4 0 010 8H8"/><path d="M7 5L4 8l3 3"/>')}</button>
             <button type="button" data-cmd="redo" title="Повторить (Ctrl+Y)">${icon('<path d="M16 8H8a4 4 0 000 8h4"/><path d="M13 5l3 3-3 3"/>')}</button>
             <button type="button" data-cmd="fullscreen" title="На весь экран">${icon('<path d="M3 7V3h4"/><path d="M17 7V3h-4"/><path d="M3 13v4h4"/><path d="M17 13v4h-4"/>')}</button>
-            <span style="margin-left:auto;font-size:.8rem;color:#b9c7e6;align-self:center;">4tim редактор v0.3</span>
+            <span style="margin-left:auto;font-size:.8rem;color:#b9c7e6;align-self:center;">4SLASeditor v0.3</span>
         `;
         this.editor.parentNode.insertBefore(toolbar, this.editor);
         this.toggleBtn = toolbar.querySelector('[data-cmd="toggleSource"]');
